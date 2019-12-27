@@ -1,4 +1,4 @@
-import { isPlainOnject } from "./util";
+import { isPlainObject } from "./util";
 
 function normalizeHeaderName(headers:any, normalizedName:string):void{
   if(!headers){
@@ -14,7 +14,7 @@ function normalizeHeaderName(headers:any, normalizedName:string):void{
 
 export function proccessHeaders(headers:any, data:any):any{
   normalizeHeaderName(headers, 'Content-Type')
-  if(isPlainOnject(data)){
+  if(isPlainObject(data)){
     if(headers && !headers['Content-Type']){
       headers['Content-Type'] = 'application/json;charset=utf-8'
     }
